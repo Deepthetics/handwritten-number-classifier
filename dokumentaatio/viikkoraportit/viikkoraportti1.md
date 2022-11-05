@@ -9,3 +9,5 @@ Tähän mennessä olen oppinut sen, että kyseisen ongelman ratkaisemiseen sovel
 Epäselvää on vielä aiheen järkevä rajaus kurssin puitteissa sekä se, että mitä on tarkoituksenmukaista toteuttaa alusta asti itse ja kuinka paljon/missä kohdin voi käyttää valmiita kirjastoja.
 
 Ohjelmakoodin kirjoittaminen on tarkoitus aloittaa ensi viikolla.
+
+Työhön käytetty aika tällä viikolla: 3 tuntia.
