@@ -1,4 +1,4 @@
-# Project Specification
+# Vaatimusmäärittely
 
 ## Ohjelmointikieli
 
