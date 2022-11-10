@@ -14,8 +14,16 @@ TKT
 
 ## Algoritmit/tietorakenteet
 
-Tarkoituksena on toteuttaa käsinkirjoitettuja numeroita tunnistava luokitin. Olisi kiinnostavaa toteuttaa sekä neuroverkkoon että k-lähimpään naapuriin perustuvat luokittimet ja vertailla näitä ainakin luokitteluvirheen suhteen. En ole kuitenkaan varma, että onko tämä aihe näin lähestyttynä liian laaja tälle kurssille? Jos on, niin sitten täytyy rajata lähestyminen vain toiseen metodiin.
+Tarkoituksena on toteuttaa käsinkirjoitettuja numeroita tunnistava luokitin käyttäen k:n lähimmän naapurin menetelmää. Luokittimen on tarkoitus käyttää parhaimmaksi todettua muokattua Hausdorff -etäisyysmittaa. Tämän lisäksi on tarkoitus kokeilla myös muita etäisyysmittoja ja vertailla, miten etäisyysmitan vaihto vaikuttaa luokitteluvirheeseen.
 
 ## Syötteet
 
-MNIST-tietokannan bitmap-kuvat käsinkirjoitetuista numeroista.
+Syötteenä käytettävä data on MNIST-tietokannan bitmap-kuvat käsinkirjoitetuista numeroista CSV-formaatissa.
+
+## Lähteet
+
+Käytettävä data on alunperin ladattu osoitteista:
+
+https://www.kaggle.com/datasets/oddrationale/mnist-in-csv?select=mnist_train.csv
+
+https://www.kaggle.com/datasets/oddrationale/mnist-in-csv?select=mnist_test.csv
