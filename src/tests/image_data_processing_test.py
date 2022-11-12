@@ -19,6 +19,7 @@ class TestImageDataProcessing(unittest.TestCase):
   def setUp(self):
     self.addTypeEqualityFunc(pd.Series, self.assertSeriesEqual)
     self.addTypeEqualityFunc(pd.DataFrame, self.assertDataframeEqual)
+    pass
 
   def test_extract_extracts_data_data_correctly(self):
     row1 = [1, 0, 220, 0, 0, 200, 0, 0, 180, 0]
@@ -26,14 +27,14 @@ class TestImageDataProcessing(unittest.TestCase):
     row3 = [7, 240, 200, 0, 180, 200, 180, 0, 220, 0]
     columns = ['label', '1x1', '1x2', '1x3', '2x1', '2x2', '2x3', '3x1', '3x2', '3x3']
     df = pd.DataFrame([row1, row2, row3], columns=columns)
+
     images, labels = extract(df)
 
-    row1_X = [200, 180, 180, 0, 240, 40, 160, 220, 200]
+    row1_X = [0, 220, 0, 0, 200, 0, 0, 180, 0]
     row2_X = [200, 180, 180, 0, 240, 40, 160, 220, 200]
     row3_X = [240, 200, 0, 180, 200, 180, 0, 220, 0]
     columns_X = ['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', '3x1', '3x2', '3x3']
     correct_X = pd.DataFrame([row1_X, row2_X, row3_X], columns=columns_X)
-
     self.assertEqual(images, correct_X)
 
     correct_y = pd.Series([1, 3, 7], name='label')
