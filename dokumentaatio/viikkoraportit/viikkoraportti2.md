@@ -15,8 +15,10 @@ Opittu:
 
 Epäselvyydet ja vaikeudet:
 
-Harjoitusdatassa on 60000 kuvaa ja näiden muuntaminen mustavalkoisiksi kesti todella kauan, koska laskin, että yksittäisiä arvoja on läpi käytävänä yli 47 miljoonaa. Oletan, että k:n lähimmän naapurin menetelmää käytettäessä ja etäisyyksiä laskettaessa ei ole mahdollista käyttää näin suurta määrää harjoitusdataa, jos halutaan luokitella useampia testidatan kuvia nopeasti. Eli hieman epäselvyyttä sen suhteen, kuinka suurta osaa harjoitusdatasta voisi ja olisi tarkoituksenmukaista käyttää? Testien konfigurointi tuotti myös hieman vaikeuksia, mutta luulen selviäväni niistä.
+Harjoitusdatassa on 60000 kuvaa ja näiden muuntaminen mustavalkoisiksi kesti todella kauan. Laskin, että yksittäisiä arvoja on läpi käytävänä yli 47 miljoonaa. Oletan, että k:n lähimmän naapurin menetelmää käytettäessä ja etäisyyksiä laskettaessa ei ole mahdollista käyttää näin suurta määrää harjoitusdataa, jos halutaan luokitella useampia testidatan kuvia nopeasti. Eli hieman epäselvyyttä sen suhteen, kuinka suurta osaa harjoitusdatasta voisi ja olisi tarkoituksenmukaista käyttää? Testien konfigurointi tuotti myös hieman vaikeuksia, mutta luulen selviäväni niistä.
 
 Seuraavaksi:
-- ensi viikolla on tarkoitus toteuttaa vähintään käytettävien etäisyyksien laskeminen mustavalkoisten kuvien välillä sekä saada konfiguroitu testaus, jotta tarvittavien testien luominen on mahdollista
+- ensi viikolla on tarkoitus toteuttaa vähintään käytettävien etäisyyksien laskeminen mustavalkoisten kuvien välillä sekä saada konfiguroitua testaus, jotta tarvittavien testien luominen on mahdollista
 - tämän jälkeen on tarkotus toteuttaa k:n lähimmän naapurin menetelmään perustuva luokittelu sekä testata tätä testidataan
+
+Työhön käytetty aika tällä viikolla: 12 tuntia.

@@ -21,7 +21,7 @@ class TestImageDataProcessing(unittest.TestCase):
     self.addTypeEqualityFunc(pd.DataFrame, self.assertDataframeEqual)
     pass
 
-  def test_extract_extracts_data_data_correctly(self):
+  def test_extract_extracts_data_correctly(self):
     row1 = [1, 0, 220, 0, 0, 200, 0, 0, 180, 0]
     row2 = [3, 200, 180, 180, 0, 240, 40, 160, 220, 200]
     row3 = [7, 240, 200, 0, 180, 200, 180, 0, 220, 0]
