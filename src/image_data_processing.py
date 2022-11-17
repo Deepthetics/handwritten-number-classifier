@@ -25,16 +25,16 @@ def to_binary(df):
     dataframe: pandas.Dataframe-luokan olio, joka sisältää binäärit mustavalkoiset kuvat.
   """
 
-  #print(len(df.index))
-  #print(len(df.columns))
-  #print(df.shape)
-  for i in range(len(df.index)):
-    for j in range(len(df.columns)):
+  row_count = len(df.index)
+  column_count = len(df.columns)
+  
+  for i in range(row_count):
+    for j in range(column_count):
       if df.iloc[i, j] > 127:
-        df.iat[i, j] = 255
-        print(i)
+        df.iat[i, j] = 1
+        print(f'Row: {i}')
       else:
         df.iat[i, j] = 0
-        print(i)
+        print(f'Row: {i}')
 
   return df
