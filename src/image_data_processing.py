@@ -8,7 +8,8 @@ def extract(df):
     df: pandas.DataFrame-luokan olio.
 
   Returns:
-    dataframe: pandas.Dataframe-luokan olio
+    images: pandas.DataFrame -luokan olio, joka sisältää kuvat.
+    labels: pandas.Series -luokan olio, joka sisältää kuvia vastaavat luokat.
   """
 
   images = df.iloc[:,1:]
@@ -22,12 +23,12 @@ def to_binary(df):
     df: pandas.DataFrame-luokan olio, joka sisältää harmaaväriskaalaiset kuvat.
 
   Returns:
-    dataframe: pandas.Dataframe-luokan olio, joka sisältää binäärit mustavalkoiset kuvat.
+    df: pandas.Dataframe -luokan olio, joka sisältää binäärit mustavalkoiset kuvat.
   """
 
   row_count = len(df.index)
   column_count = len(df.columns)
-  
+
   for i in range(row_count):
     for j in range(column_count):
       if df.iloc[i, j] > 127:

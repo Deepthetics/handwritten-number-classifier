@@ -4,6 +4,15 @@ from matplotlib import pyplot as plt
 
 
 def to_array(image):
+    """Muuntaa 28x28 -resoluutioisen kuvan vektoriesityksen matriisiesitykseksi plottaamista varten.
+
+    Args:
+        image: pandas.Series -luokan olio, joka sisältää kuvadatan.
+
+    Returns:
+        array: numpy.ndarray -luokan olio, joka sisältää kuvadatan.
+    """
+
     array = np.empty((28, 28))
     image = image.to_numpy()
 
@@ -14,6 +23,13 @@ def to_array(image):
     return array
 
 def plot_image_data(image1, image2):
+    """Plottaa harmaaväriskaalaisen kuvan ja sitä vastaavan mustavalkoisen muunnoksen vierekkäin.
+
+    Args:
+        image1: pandas.Series -luokan olio, joka sisältää kuvadatan.
+        image2: pandas.Series -luokan olio, joka sisältää kuvadatan.
+    """
+
     image1 = to_array(image1)
     image2 = to_array(image2)
     
