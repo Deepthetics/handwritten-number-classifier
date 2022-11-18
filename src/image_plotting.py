@@ -18,8 +18,7 @@ def to_array(image):
 
     for i, j in enumerate(range(0, 784, 28)):
         array[i,:] = image[j:j+28]
-    
-    print(array)
+
     return array
 
 def plot_image_data(image1, image2):
@@ -32,7 +31,7 @@ def plot_image_data(image1, image2):
 
     image1 = to_array(image1)
     image2 = to_array(image2)
-    
+
     fig = plt.figure()
     fig.suptitle('Comparison')
     rows = 1
