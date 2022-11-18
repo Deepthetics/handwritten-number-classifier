@@ -20,7 +20,6 @@ class TestImageDataProcessing(unittest.TestCase):
   def setUp(self):
     self.addTypeEqualityFunc(pd.Series, self.assertSeriesEqual)
     self.addTypeEqualityFunc(pd.DataFrame, self.assertDataframeEqual)
-    pass
 
   def test_extract_extracts_data_correctly(self):
     row1 = [1, 0, 220, 0, 0, 200, 0, 0, 180, 0]
