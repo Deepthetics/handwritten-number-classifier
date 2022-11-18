@@ -18,3 +18,5 @@ Olen mielestäni toteuttanut etäisyyksien laskemisen oikein etäisyysmittoja k�
 Seuraavaksi:
 - ensi viikolla olisi tarkoitus varmistua siitä, että etäisyyksien laskeminen on varmasti toteutettu oikein
 - tämän jälkeen on tarkoitus toteuttaa toiminnallisuudet testidatan kuvien luokitteluun k:n lähimmän naapurin menetelmällä ja päästä testamaan menetelmää käytännössä
+
+Työhön käytetty aika tällä viikolla: 11 tuntia.
