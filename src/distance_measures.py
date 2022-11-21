@@ -3,7 +3,7 @@ import pandas as pd
 
 def distance_d6(points1, points2):
     n = 784
-    distance = np.sqrt(np.square((points1-points2).sum()))
+    distance = np.sum(np.abs(points1-points2))
 
     #for i, point in enumerate(points1):
         #distances = abs(-1*points2+point)

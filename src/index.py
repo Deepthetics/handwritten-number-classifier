@@ -25,7 +25,7 @@ test_X = pd.read_csv('data/test_x.csv').iloc[:,1:]
 
 # Plot corresponding greyscale and black and white images side by side
 #plot_image_data(train_X_grey.iloc[0], train_X.iloc[0])
-plot_image_data(train_X.iloc[59996], test_X.iloc[9996])
+#plot_image_data(train_X.iloc[59996], test_X.iloc[9996])
 #print(train_y)
 #print(test_y)
 
