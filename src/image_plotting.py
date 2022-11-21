@@ -22,7 +22,7 @@ def to_array(image):
     return array
 
 def plot_image_data(image1, image2):
-    """Plottaa harmaaväriskaalaisen kuvan ja sitä vastaavan mustavalkoisen muunnoksen vierekkäin.
+    """Plottaa kaksi kuvaa vierekkäin.
 
     Args:
         image1: pandas.Series -luokan olio, joka sisältää kuvadatan.
@@ -39,10 +39,10 @@ def plot_image_data(image1, image2):
 
     fig.add_subplot(rows, columns, 1)
     plt.imshow(image1, cmap='Greys')
-    plt.title('Greyscale')
+    plt.title('image1')
 
     fig.add_subplot(rows, columns, 2)
     plt.imshow(image2, cmap='Greys')
-    plt.title('Black & White')
+    plt.title('image2')
 
     plt.show()

@@ -1,12 +1,13 @@
+import numpy as np
 import pandas as pd
 
 def distance_d6(points1, points2):
     n = 784
-    distance = 0
+    distance = np.sqrt(np.square((points1-points2).sum()))
 
-    for point in points1:
-        distances = abs(-1*points2+point)
-        distance += min(distances)
+    #for i, point in enumerate(points1):
+        #distances = abs(-1*points2+point)
+        #distance += min(distances)
 
     return 1/n*distance
 
