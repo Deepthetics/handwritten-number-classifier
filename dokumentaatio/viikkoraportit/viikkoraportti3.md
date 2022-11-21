@@ -13,7 +13,9 @@ Opittu:
 
 Epäselvyydet ja vaikeudet:
 
-Olen mielestäni toteuttanut etäisyyksien laskemisen oikein etäisyysmittoja käsittelävän artikkelin pohjalta, mutta testatessani etäisyyden laskemista esim. mitalla D22, saan etäisyydeksi aina arvon 0. Jokin virhe toteutuksessa luultavasti on, mutta en sellaista useiden tarkistuksienkaan jälkeen vielä löytänyt. Vaikuttaisi siltä, että osakaavaa d6 vastaava funktio palauttaa aina arvon 0, koska sen laskema summa on vain summa nollia, koska min(d(a, b)) saa aina arvon nolla, kun b in B kaikilla a in A. Tästä johtuen funktio f2 palauttaa aina arvon 0, jolloin myös D22 palauttaa aina arvon 0...
+Ennen edellisen palautuksen deadlinea oli ongelma etäisyyden laskemisen kanssa, koska luin artikkelin notaatiosta väärin yhden yksityiskohdan, mutta tämä on käsittääkseni nyt korjattu. Hieman edelleen hämmentää etäisyysmittaa D22 käyttäessä funktion f2 tarpeellisuus. Ainakin näiden samankokoisten kuvien etäisyyksiä laskettaessa saan aina d(A,B)=d(B,A), jonka vuoksi max(d(A,B), d(B,A)) on triviaali toimenpide. Ja koska d(A,B)=d(B,A), niin riittäisi laskea vain d(A,B) käyttäen osakaavaa d6. Jos näin ei kuuluisi olla, niin siinä tapauksessa etäisyyden laskemisessa on edelleen jotain väärin.
+
+Onko sovellukselle tarkoitus luoda jonkinlainen käyttöliittymä ja jos on niin tarvitseeko sen olla graafinen vai riittääkö tekstikäyttöliittymä?
 
 Seuraavaksi:
 - ensi viikolla olisi tarkoitus varmistua siitä, että etäisyyksien laskeminen on varmasti toteutettu oikein
