@@ -21,12 +21,14 @@ def to_array(image):
 
     return array
 
-def plot_image_data(image1, image2):
+def plot_image_data(image1, image2, image1_title, image2_title):
     """Plottaa kaksi kuvaa vierekkäin.
 
     Args:
         image1: pandas.Series -luokan olio, joka sisältää kuvadatan.
         image2: pandas.Series -luokan olio, joka sisältää kuvadatan.
+        image1_title: ensimmäisen kuvan otsikko (str).
+        image2_title: toisen kuvan otsikko (str).
     """
 
     image1 = to_array(image1)
@@ -39,11 +41,11 @@ def plot_image_data(image1, image2):
 
     fig.add_subplot(rows, columns, 1)
     plt.imshow(image1, cmap='Greys')
-    plt.title('image1')
+    plt.title(image1_title)
 
     fig.add_subplot(rows, columns, 2)
     plt.imshow(image2, cmap='Greys')
-    plt.title('image2')
+    plt.title(image2_title)
 
     plt.show()
 
