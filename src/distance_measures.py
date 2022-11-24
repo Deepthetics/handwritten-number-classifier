@@ -1,8 +1,10 @@
 import numpy as np
 import pandas as pd
 
+
 def distance_d6(points1, points2):
     n = 784
+    #distance = 0
     distance = np.sum(np.abs(points1-points2))
 
     #for i, point in enumerate(points1):

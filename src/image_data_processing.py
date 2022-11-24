@@ -4,8 +4,8 @@ import pandas as pd
 def extract(df):
     """Purkaa MNIST-datasta kuvat ja niitä vastaavat luokat erilleen.
 
-      Args:
-          df: pandas.DataFrame-luokan olio.
+    Args:
+        df: pandas.DataFrame-luokan olio.
 
     Returns:
         images: pandas.DataFrame -luokan olio, joka sisältää kuvat.
@@ -17,7 +17,7 @@ def extract(df):
     return (images, labels)
 
 def to_binary(df):
-    """Muuntaa MNIST-datan sisältämät harmaaväriskaalaiset kuvat binääreiksi mustavalkoisiksi 
+    """Muuntaa MNIST-datan sisältämät harmaaväriskaalaiset kuvat binääreiksi mustavalkoisiksi
     kuviksi.
 
     Args:
