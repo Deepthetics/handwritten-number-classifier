@@ -46,3 +46,17 @@ def plot_image_data(image1, image2):
     plt.title('image2')
 
     plt.show()
+
+def plot_classification(image, predicted_label, real_label):
+    """Plottaa kuvan ja tiedot sen ennustetusta luokasta sekä todellisesta luokasta.
+
+    Args:
+        image: pandas.Series -luokan olio, joka sisältää kuvadatan.
+        predicted_label: ennustettu luokka (int).
+        real_label: todellinen luokka (int).
+    """
+
+    image = to_array(image)
+    plt.imshow(image, cmap="Greys")
+    plt.title(f'Predicted label: {predicted_label}\nReal label:{real_label}', loc='left')
+    plt.show()
