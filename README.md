@@ -6,6 +6,8 @@
 
 [Testausdokumentti](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/testausdokumentti.md)
 
+[Toteutusdokumentti](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/toteutusdokumentti.md)
+
 ## Viikkoraportit
 
 [Viikkoraportti 1](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikkoraportti1.md)
