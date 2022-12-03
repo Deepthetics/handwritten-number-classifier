@@ -4,23 +4,12 @@ import pandas as pd
 def distance_d6(points1, points2):
     # NOTE: Laske etäisyys lähimpään samanväriseen (musta tai valkoinen) pisteeseen
     n = 784
-    #distance = 0
     distance = np.sum(np.abs(points1-points2))
-
-    #for i, point in enumerate(points1):
-        #distances = abs(-1*points2+point)
-        #distance += min(distances)
 
     return 1/n*distance
 
 def distance_d6_mod(points1, points2):
-    distance = 0
-
-    for point in points1:
-        distances = -1*points2+point
-        distance += min(distances)
-
-    return distance
+    pass
 
 def distance_f2(distance1, distance2):
     return max(distance1, distance2)

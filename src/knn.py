@@ -46,7 +46,7 @@ def classify_many(train_X, train_y, images, k, distance_function):
         train_y: pandas.Series -luokan olio, joka sisältää harjoitusdatan kuvia vastaavat luokat.
         images: pandas.DataFrame -luokan olio, joka vastaa luokiteltavia kuvia.
         k: naapureiden lukumäärä k-NN-menetelmää varten (int).
-    
+
     Returns:
         predicted_labels: ennustetut luokat (list).
     """
@@ -74,7 +74,7 @@ def error_rate(predicted_labels, real_labels):
     label_count = len(predicted_labels)
 
     for i in range(label_count):
-        if predicted_labels[i] != real_labels.iloc[i]:
+        if predicted_labels[i] != real_labels[i]:
             error_count += 1
 
     error = error_count / label_count
@@ -86,12 +86,12 @@ def classification_summary(predicted_labels, real_labels):
     Args:
         predicted_labels: ennustetut luokat (list).
         real_labels: todelliset luokat (list).
-    
+
     Returns:
         summary: Yhteenveto luokittelusta (string).
     """
-    
-    error = error_rate(predicted_labels, real_labels)
+
     real_labels = list(real_labels.to_numpy())
+    error = error_rate(predicted_labels, real_labels)
     summary = f'Classified {len(predicted_labels)} images:\nPredicted labels: {predicted_labels}\nReal labels: {real_labels}\nError rate: {error*100}%'
     return summary

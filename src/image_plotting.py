@@ -21,7 +21,7 @@ def to_array(image):
 
     return array
 
-def plot_image_data(image1, image2, image1_title, image2_title):
+def plot_two_images(image1, image2, image1_title, image2_title):
     """Plottaa kaksi kuvaa vierekkäin.
 
     Args:
