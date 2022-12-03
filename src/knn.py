@@ -1,11 +1,9 @@
 from statistics import mode
 import pandas as pd
-from distance_measures import distance_d22
-from image_plotting import plot_classification
 
 
-def classify(train_X, train_y, image, real_label, k):
-    """Luokittelee kuvan k-NN-menetelmällä
+def classify_one(train_X, train_y, image, k, distance_function):
+    """Luokittelee kuvan k-NN-menetelmällä.
 
     Args:
         train_X: pandas.DataFrame -luokan olio, joka sisältää harjoitusdatan kuvat.
@@ -13,6 +11,9 @@ def classify(train_X, train_y, image, real_label, k):
         image: pandas.Series -luokan olio, joka vastaa luokiteltavaa kuvaa.
         real_label: luokiteltavan kuvan todellinen luokka (int).
         k: naapureiden lukumäärä k-NN-menetelmää varten (int).
+
+    Returns:
+        predicted_label: ennustettu luokka (int).
     """
 
     # neighbors: list of neighbors as tuples of length two
@@ -21,8 +22,8 @@ def classify(train_X, train_y, image, real_label, k):
     neighbors = []
 
     for i in range(len(train_X)):
-        print(f'Calculating distance to image {i} in the training data')
-        distance = distance_d22(train_X.iloc[i], image)
+        #print(f'Calculating distance to image {i} in the training data...')
+        distance = distance_function(train_X.iloc[i], image)
         neighbors.append((distance, train_y.iloc[i]))
 
     neighbors.sort(key=lambda x: x[0])
@@ -35,4 +36,62 @@ def classify(train_X, train_y, image, real_label, k):
 
     predicted_label = mode(labels)
 
-    plot_classification(image, predicted_label, real_label)
+    return predicted_label
+
+def classify_many(train_X, train_y, images, k, distance_function):
+    """Luokittelee kuvat k-NN-menetelmällä.
+
+    Args:
+        train_X: pandas.DataFrame -luokan olio, joka sisältää harjoitusdatan kuvat.
+        train_y: pandas.Series -luokan olio, joka sisältää harjoitusdatan kuvia vastaavat luokat.
+        images: pandas.DataFrame -luokan olio, joka vastaa luokiteltavia kuvia.
+        k: naapureiden lukumäärä k-NN-menetelmää varten (int).
+    
+    Returns:
+        predicted_labels: ennustetut luokat (list).
+    """
+
+    predicted_labels = []
+
+    for i in range(len(images.index)):
+        print(f'Classifying image {i} of test data...')
+        predicted_labels.append(classify_one(train_X, train_y, images.iloc[i], k, distance_function))
+
+    return predicted_labels
+
+def error_rate(predicted_labels, real_labels):
+    """Laskee luokitteluvirheen.
+
+    Args:
+        predicted_labels: ennustetut luokat (list).
+        real_labels: todelliset luokat (list).
+
+    Returns:
+        error: luokitteluvirhe (int).
+    """
+    
+    error_count = 0
+    label_count = len(predicted_labels)
+
+    for i in range(label_count):
+        if predicted_labels[i] != real_labels.iloc[i]:
+            error_count += 1
+
+    error = error_count / label_count
+    return error
+
+def classification_summary(predicted_labels, real_labels):
+    """Muodostaa yhteenvedon useamman kuvan luokittelusta.
+
+    Args:
+        predicted_labels: ennustetut luokat (list).
+        real_labels: todelliset luokat (list).
+    
+    Returns:
+        summary: Yhteenveto luokittelusta (string).
+    """
+    
+    error = error_rate(predicted_labels, real_labels)
+    real_labels = list(real_labels.to_numpy())
+    summary = f'Classified {len(predicted_labels)} images:\nPredicted labels: {predicted_labels}\nReal labels: {real_labels}\nError rate: {error*100}%'
+    return summary
