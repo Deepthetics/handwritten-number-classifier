@@ -1,5 +1,8 @@
 # Tiralabra, harjoitustyö
 
+## Käyttöohje
+Tulossa myöhemmin.
+
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/vaatimusmaarittely.md)
