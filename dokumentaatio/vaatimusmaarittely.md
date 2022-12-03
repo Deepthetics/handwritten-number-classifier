@@ -14,7 +14,7 @@ TKT
 
 ## Algoritmit/tietorakenteet
 
-Tarkoituksena on toteuttaa käsinkirjoitettuja numeroita tunnistava luokitin käyttäen k:n lähimmän naapurin menetelmää. Luokittimen on tarkoitus käyttää parhaimmaksi todettua muokattua Hausdorff -etäisyysmittaa. Tämän lisäksi on tarkoitus kokeilla myös muita etäisyysmittoja ja vertailla, miten etäisyysmitan vaihto vaikuttaa luokitteluvirheeseen.
+Tarkoituksena on toteuttaa käsinkirjoitettuja numeroita tunnistava luokitin käyttäen k:n lähimmän naapurin menetelmää. Luokittimen on tarkoitus käyttää parhaimmaksi todettua muokattua Hausdorff -etäisyysmittaa kuvien samanlaisuuden määrittämisessä. Tämän lisäksi on tarkoitus kokeilla myös muita etäisyysmittoja ja vertailla, miten etäisyysmitan vaihto vaikuttaa luokitteluvirheeseen.
 
 ## Syötteet
 
