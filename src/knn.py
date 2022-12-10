@@ -1,5 +1,4 @@
 from statistics import mode
-import pandas as pd
 
 
 def classify_one(train_X, train_y, image, k, distance_function):
@@ -69,7 +68,7 @@ def error_rate(predicted_labels, real_labels):
     Returns:
         error: luokitteluvirhe (int).
     """
-    
+
     error_count = 0
     label_count = len(predicted_labels)
 

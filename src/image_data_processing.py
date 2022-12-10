@@ -1,5 +1,23 @@
-import pandas as pd
+import numpy as np
 
+
+def to_array(image):
+    """Muuntaa 28x28 -resoluutioisen kuvan vektoriesityksen matriisiesitykseksi plottaamista varten.
+
+    Args:
+        image: pandas.Series -luokan olio, joka sisältää kuvadatan.
+
+    Returns:
+        array: numpy.ndarray -luokan olio, joka sisältää kuvadatan.
+    """
+
+    array = np.empty((28, 28))
+    image = image.to_numpy()
+
+    for i, j in enumerate(range(0, 784, 28)):
+        array[i,:] = image[j:j+28]
+
+    return array
 
 def extract(df):
     """Purkaa MNIST-datasta kuvat ja niitä vastaavat luokat erilleen.

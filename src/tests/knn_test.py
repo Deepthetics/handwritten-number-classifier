@@ -4,6 +4,7 @@ from distance_measures import distance_d22
 from image_data_processing import extract
 from knn import classify_one, classify_many, error_rate, classification_summary
 
+
 class TestKnn(unittest.TestCase):
     def setUp(self):
         # Read MNIST data into 2D-arrays

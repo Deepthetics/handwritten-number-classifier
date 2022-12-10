@@ -1,25 +1,6 @@
-import numpy as np
-import pandas as pd
 from matplotlib import pyplot as plt
+from image_data_processing import to_array
 
-
-def to_array(image):
-    """Muuntaa 28x28 -resoluutioisen kuvan vektoriesityksen matriisiesitykseksi plottaamista varten.
-
-    Args:
-        image: pandas.Series -luokan olio, joka sisältää kuvadatan.
-
-    Returns:
-        array: numpy.ndarray -luokan olio, joka sisältää kuvadatan.
-    """
-
-    array = np.empty((28, 28))
-    image = image.to_numpy()
-
-    for i, j in enumerate(range(0, 784, 28)):
-        array[i,:] = image[j:j+28]
-
-    return array
 
 def plot_two_images(image1, image2, image1_title, image2_title):
     """Plottaa kaksi kuvaa vierekkäin.
