@@ -90,7 +90,6 @@ def classification_summary(predicted_labels, real_labels):
         summary: Yhteenveto luokittelusta (string).
     """
 
-    real_labels = list(real_labels.to_numpy())
     error = error_rate(predicted_labels, real_labels)
     summary = f'Classified {len(predicted_labels)} images:\nPredicted labels: {predicted_labels}\nReal labels: {real_labels}\nError rate: {error*100}%'
     return summary

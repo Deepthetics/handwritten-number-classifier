@@ -1,12 +1,9 @@
-#import os
 import pandas as pd
 from distance_measures import distance_d22, distance_d23, distance_d23_mod
-from image_data_processing import extract, to_binary
+from image_data_processing import to_array, extract, to_binary
 from image_plotting import plot_two_images, plot_classification
 from knn import classify_one, classify_many, classification_summary
 
-
-#print(os.getcwd())
 
 # Read MNIST data into 2D-arrays
 train_data = pd.read_csv('data/mnist_train.csv')
@@ -29,17 +26,16 @@ train_X = pd.read_csv('data/train_x.csv').iloc[:,1:]
 test_X = pd.read_csv('data/test_x.csv').iloc[:,1:]
 
 # Plot corresponding greyscale and black and white images side by side
-#plot_two_images(train_X_grey.iloc[0], train_X.iloc[0], 'greyscale', 'black and white')
-#plot_two_images(train_X.iloc[59996], test_X.iloc[9996])
+#plot_two_images(to_array(train_X_grey.iloc[0]), to_array(train_X.iloc[0]), 'greyscale', 'black and white')
 
 # Classify an image from test data using k-NN and plot the result
-#plot_classification(test_X.iloc[0],
+#plot_classification(to_array(test_X.iloc[0]),
 #                    classify_one(train_X=train_X, train_y=train_y, image=test_X.iloc[0], k=100, distance_function=distance_d22),
 #                    test_y.iloc[0])
 
 # Classify 100 images from test data using k-NN
 predicted_labels = classify_many(train_X.iloc[0:60000], train_y, test_X.iloc[0:50], k=5, distance_function=distance_d22)
-real_labels = test_y.iloc[0:50]
+real_labels = list(test_y.iloc[0:50].to_numpy())
 
 # Print classification summary
 print(classification_summary(predicted_labels, real_labels))
