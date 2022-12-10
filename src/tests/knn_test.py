@@ -44,7 +44,8 @@ class TestKnn(unittest.TestCase):
 
     def test_classification_summary_forms_summary_string_correctly(self):
         predicted_labels = [7, 2, 1, 0, 4, 1, 4, 9, 0, 0]
-        real_labels = self.test_y.iloc[0:10]
+        real_labels = list(self.test_y.iloc[0:10].to_numpy())
+        #real_labels = self.test_y.iloc[0:10]
 
         correct_summary = 'Classified 10 images:\nPredicted labels: [7, 2, 1, 0, 4, 1, 4, 9, 0, 0]\nReal labels: [7, 2, 1, 0, 4, 1, 4, 9, 5, 9]\nError rate: 20.0%'
         self.assertEqual(classification_summary(predicted_labels, real_labels), correct_summary)
