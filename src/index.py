@@ -1,9 +1,12 @@
+#import os
 import pandas as pd
 from distance_measures import distance_d22, distance_d23, distance_d23_mod
 from image_data_processing import extract, to_binary
 from image_plotting import plot_two_images, plot_classification
 from knn import classify_one, classify_many, classification_summary
 
+
+#print(os.getcwd())
 
 # Read MNIST data into 2D-arrays
 train_data = pd.read_csv('data/mnist_train.csv')
@@ -35,9 +38,8 @@ test_X = pd.read_csv('data/test_x.csv').iloc[:,1:]
 #                    test_y.iloc[0])
 
 # Classify 100 images from test data using k-NN
-predicted_labels = classify_many(train_X, train_y, test_X.iloc[0:10], k=100, distance_function=distance_d22)
-real_labels = test_y.iloc[0:10]
-
+predicted_labels = classify_many(train_X.iloc[0:60000], train_y, test_X.iloc[0:50], k=5, distance_function=distance_d22)
+real_labels = test_y.iloc[0:50]
 
 # Print classification summary
 print(classification_summary(predicted_labels, real_labels))
