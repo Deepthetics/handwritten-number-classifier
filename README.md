@@ -22,3 +22,5 @@ Tulossa myöhemmin.
 [Viikkoraportti 4](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikkoraportti4.md)
 
 [Viikkoraportti 5](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikkoraportti5.md)
+
+[Viikkoraportti 6](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikkoraportti6.md)
