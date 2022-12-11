@@ -1,7 +1,8 @@
 import unittest
+import numpy as np
 import pandas as pd
 import pandas.testing as pd_testing
-from image_data_processing import extract, to_binary
+from image_data_processing import to_array, extract, to_binary
 
 
 class TestImageDataProcessing(unittest.TestCase):
@@ -20,6 +21,29 @@ class TestImageDataProcessing(unittest.TestCase):
     def setUp(self):
         self.addTypeEqualityFunc(pd.Series, self.assertSeriesEqual)
         self.addTypeEqualityFunc(pd.DataFrame, self.assertDataframeEqual)
+
+    def test_to_array_converts_data_structure_correctly(self):
+        correct_array1 = np.zeros((28, 28), dtype=int)
+        aux_array = np.array([[1]+[0]*27], dtype=int)
+        correct_array2 = np.array([[1]+[0]*27], dtype=int)
+        for i in range(27):
+            correct_array2 = np.concatenate((correct_array2, aux_array))
+        correct_array3 = np.eye(28, dtype=int)
+
+        input_series1 = pd.Series([0 for i in range(784)])
+        input_series2 = pd.Series([0 if i % 28 != 0 else 1 for i in range(784)])
+        input_series3 = correct_array3[0, :]
+        for i in range(1, 28):
+            input_series3 = np.concatenate((input_series3, correct_array3[i, :]))
+        input_series3 = pd.Series(input_series3)
+
+        output_array1 = to_array(input_series1)
+        output_array2 = to_array(input_series2)
+        output_array3 = to_array(input_series3)
+
+        self.assertTrue(np.array_equal(output_array1, correct_array1))
+        self.assertTrue(np.array_equal(output_array2, correct_array2))
+        self.assertTrue(np.array_equal(output_array3, correct_array3))
 
     def test_extract_extracts_data_correctly(self):
         row1 = [1, 0, 220, 0, 0, 200, 0, 0, 180, 0]
