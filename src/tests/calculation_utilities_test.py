@@ -14,3 +14,13 @@ class Calculation_Utilities(unittest.TestCase):
 
     def test_generate_coordinates_by_distance_returns_dictionary_with_correct_amount_of_items(self):
         self.assertEqual(len(self.coordinates_by_distance.items()), 784)
+
+    def test_generate_coordinates_by_distance_returns_dictionary_where_lists_have_correct_amount_of_elements(self):
+        self.assertEqual(len(self.coordinates_by_distance[(0, 0)]), 783)
+        self.assertEqual(len(self.coordinates_by_distance[(0, 1)]), 783)
+        self.assertEqual(len(self.coordinates_by_distance[(27, 27)]), 783)
+
+    def test_generate_coordinates_by_distance_returns_dictionary_where_elements_of_lists_have_correct_content(self):
+        self.assertEqual(self.coordinates_by_distance[(0, 0)][0][0], 0)
+        self.assertEqual(self.coordinates_by_distance[(0, 0)][0][1], 1)
+        self.assertEqual(type(self.coordinates_by_distance[(0, 0)][0][2]), float)
