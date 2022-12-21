@@ -35,6 +35,6 @@ def plot_classification(image, predicted_label, real_label):
         real_label: todellinen luokka (int).
     """
 
-    plt.imshow(image, cmap="Greys")
-    plt.title(f'Predicted label: {predicted_label}\nReal label:{real_label}', loc='left')
+    plt.imshow(image, cmap='Greys')
+    plt.title(f'Predicted label: {predicted_label}\nReal label: {real_label}', loc='left')
     plt.show()
