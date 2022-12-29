@@ -1,4 +1,4 @@
-# Vaatimusmäärittely
+# Määrittelydokumentti
 
 ## Ohjelmointikieli
 
@@ -14,7 +14,7 @@ TKT
 
 ## Algoritmit/tietorakenteet
 
-Tarkoituksena on toteuttaa käsinkirjoitettuja numeroita tunnistava luokitin käyttäen k:n lähimmän naapurin menetelmää. Luokittimen on tarkoitus käyttää parhaimmaksi todettua muokattua Hausdorff -etäisyysmittaa kuvien samanlaisuuden määrittämisessä. Tämän lisäksi on tarkoitus kokeilla myös muita etäisyysmittoja ja vertailla, miten etäisyysmitan vaihto vaikuttaa luokitteluvirheeseen.
+Tarkoituksena on toteuttaa käsinkirjoitettuja numeroita tunnistava luokitin käyttäen k:n lähimmän naapurin menetelmää. Luokittimen on tarkoitus käyttää parhaimmaksi todettua muokattua Hausdorff -etäisyysmittaa D22 kuvien samanlaisuuden määrittämisessä. Tämän lisäksi on tarkoitus kokeilla myös muita etäisyysmittoja ja vertailla, miten etäisyysmitan vaihto vaikuttaa luokitteluvirheeseen.
 
 ## Syötteet
 
@@ -27,3 +27,9 @@ Käytettävä data on alunperin ladattu osoitteista:
 https://www.kaggle.com/datasets/oddrationale/mnist-in-csv?select=mnist_train.csv
 
 https://www.kaggle.com/datasets/oddrationale/mnist-in-csv?select=mnist_test.csv
+
+---
+
+Käytettävät etäisyysmitat on määritelty artikkelissa:
+
+https://ieeexplore.ieee.org/document/576361
