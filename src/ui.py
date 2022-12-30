@@ -22,26 +22,6 @@ class UI:
             command = input('command: ')
             print()
 
-#            if command == '1':
-#                train_index_start = int(input('train index start (0-59999): '))
-#                train_index_end = int(input('train index end (0-59999): '))
-#                test_index = int(input('test index (0-9999): '))
-#                k = int(input('k: '))
-#                distance_function = input('distance function (d22, d23, d23mod): ')
-
-#               if distance_function == 'd22':
-#                    distance_function = distance_d22
-#                elif distance_function == 'd23':
-#                    distance_function = distance_d23
-#                elif distance_function == 'd23mod':
-#                    distance_function = distance_d23_mod
-
-#                plot_classification(to_array(self.test_X.iloc[test_index]),
-#                                    classify_one(train_X=self.train_X[train_index_start:train_index_end+1],
-#                                                 train_y=self.train_y[train_index_start:train_index_end+1],
-#                                                 image=self.test_X.iloc[test_index], k=k, distance_function=distance_function),
-#                                    self.test_y.iloc[test_index])
-
             if command == '1':
                 train_index_start = int(input('train index start (0-59999): '))
                 train_index_end = int(input('train index end (0-59999): '))

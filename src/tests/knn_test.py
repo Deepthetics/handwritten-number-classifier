@@ -22,8 +22,8 @@ class TestKnn(unittest.TestCase):
         self.distance_function = distance_d22
 
     def test_classify_many_returns_correct_amount_of_labels(self):
-        labels = classify_many(self.train_X.iloc[0:10000], self.train_y.iloc[0:10000], self.test_X.iloc[0:10], 10, self.distance_function)
-        self.assertEqual(len(labels), 10)
+        labels = classify_many(self.train_X.iloc[0:10000], self.train_y.iloc[0:10000], self.test_X.iloc[0:5], 10, self.distance_function)
+        self.assertEqual(len(labels), 5)
 
     def test_error_rate_calculates_error_correctly(self):
         predicted_labels_1 = [1, 2, 3, 4]
