@@ -12,22 +12,18 @@ class TestKnn(unittest.TestCase):
         test_data = pd.read_csv('data/mnist_test.csv')
 
         # Extract image and label data
-        train_X_grey, train_y = extract(train_data)
-        test_X_grey, test_y = extract(test_data)
-        self.train_y = train_y
-        self.test_y = test_y
+        self.train_X_grey, self.train_y = extract(train_data)
+        self.test_X_grey, self.test_y = extract(test_data)
 
         # Read binary (black and white) image data into 2D-arrays
-        train_X = pd.read_csv('data/train_x.csv').iloc[:,1:]
-        test_X = pd.read_csv('data/test_x.csv').iloc[:,1:]
+        self.train_X = pd.read_csv('data/train_x.csv').iloc[:,1:]
+        self.test_X = pd.read_csv('data/test_x.csv').iloc[:,1:]
 
-        distance_function = distance_d22
+        self.distance_function = distance_d22
 
-    #def test_classify_one(self):
-        #pass
-
-    #def test_classify_many(self):
-        #pass
+    def test_classify_many_returns_correct_amount_of_labels(self):
+        labels = classify_many(self.train_X.iloc[0:10000], self.train_y.iloc[0:10000], self.test_X.iloc[0:10], 10, self.distance_function)
+        self.assertEqual(len(labels), 10)
 
     def test_error_rate_calculates_error_correctly(self):
         predicted_labels_1 = [1, 2, 3, 4]
@@ -47,5 +43,5 @@ class TestKnn(unittest.TestCase):
         real_labels = list(self.test_y.iloc[0:10].to_numpy())
         #real_labels = self.test_y.iloc[0:10]
 
-        correct_summary = 'Classified 10 images:\nPredicted labels: [7, 2, 1, 0, 4, 1, 4, 9, 0, 0]\nReal labels: [7, 2, 1, 0, 4, 1, 4, 9, 5, 9]\nError rate: 20.0%'
+        correct_summary = 'Classified 10 images.\nPredicted labels: [7, 2, 1, 0, 4, 1, 4, 9, 0, 0]\nReal labels: [7, 2, 1, 0, 4, 1, 4, 9, 5, 9]\nError rate: 20.0%'
         self.assertEqual(classification_summary(predicted_labels, real_labels), correct_summary)
