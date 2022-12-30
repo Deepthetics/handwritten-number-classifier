@@ -24,7 +24,7 @@ Luokitteluista on myös mahdollista plotata seuraavanlainen esitys:
 
 Ohjelmalla on yksinkertainen tekstikäyttöliittymä, joka näyttää seuraavanlaiselta:
 
-![](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/kuvat/tiralabra_ui.png)
+![](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/kuvat/ui.png)
 
 ## Suorituskyky ja O-analyysi
 
