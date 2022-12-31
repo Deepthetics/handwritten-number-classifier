@@ -1,7 +1,36 @@
 # Tiralabra, harjoitustyö
 
 ## Käyttöohje
-Tulossa myöhemmin.
+
+Käyttöohje olettaa, että riippuvuuksienhallintaan käytettävä ohjelma Poetry on asennettuna käyttäjän laitteelle.
+
+1. Kloonaa repositorio paikalliselle laitteellesi.
+
+2. Siirry repositorion juureen.
+
+3. Asenna riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+
+4. Siirry virtuaaliympäristöön komennolla:
+
+```bash
+poetry shell
+```
+
+5. Sovelluksen voi suorittaa komennolla:
+
+```bash
+python src/index.py
+```
+
+6. Automaattiset yksikkötestit voi suorittaa komennolla:
+
+```bash
+pytest src
+```
 
 ## Dokumentaatio
 
