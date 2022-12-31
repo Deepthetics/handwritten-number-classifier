@@ -3,6 +3,8 @@
 ## Yksikkötestaus
 Tällä hetkellä automatisoidut yksikkötestit calculation_utilities-, distance_measures- ja image_processing-moduulien funktioille knn-moduulin funktioille. Moduulien image_plotting ja ui funktioita ei ole tarkoitus testata automaattisesti, koska ne vastaavat erilaisista plottaustoimenpiteistä sekä käyttöliittymästä eivätkä itse suoraan palauta mitään.
 
+Luokitteluun käytettävän k:n lähimmän naapurin menetelmästä vastaavan funktion toiminnan oikeellisuutta ei pysty arvioimaan sen perusteella, että luokitteleeko se kaikki kuvat oikein, koska 0%:n luokitteluvirheeseen ei ole mahdollista päästä. Tästä syystä luokitteluun liittyvä toiminnallisuus, kuten kuvien välisten etäisyyksien laskeminen, on eriytetty omiin funktioihinsa menetelmän oikeellisuuden varmistamiseksi.
+
 Testit pystyy toistamaan ajamalla projektin juuressa komennon:
 
 ```bash
@@ -64,4 +66,16 @@ Parhaimpaan tulokseen päästiin siis etäisyysmitalla D22, mikä oli olettavaak
 
 ### k:n arvo
 
-...
+Parametrin k optimaalista arvoa testattiin empiirisesti, mutta mahdollisimman kattava testaaminen monella eri k:n arvolla osoittautui hyvin aikaavieväksi, jos käytettävän testidatan määrä on edes 100 kuvaa.
+
+Parametrin k arvon vaikutusta luokitteluvirheeseen testattiin seuraavilla parametreilla:
+
+- harjoitusdata: kuvat 0-9999
+
+- testidata: kuvat 0-99
+
+- k: x
+
+- etäisyysmitta: D22
+
+Ainakin arvolla k=5 saatiin luokitteluvirheeksi 4%. Myös joillain isommilla k:n arvoilla, kuten k=20, saatiin luokitteluvirheeksi sama 4%. Tätä parempaan luokitteluvirheeseen ei päästy testattaessa useammalle eri k:n arvolla.
