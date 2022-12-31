@@ -34,7 +34,7 @@ pytest src
 
 ## Dokumentaatio
 
-[Määrittelydokumentti](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/vaatimusmaarittely.md)
+[Määrittelydokumentti](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/maarittelydokumentti.md)
 
 [Testausdokumentti](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/testausdokumentti.md)
 
