@@ -52,8 +52,6 @@ Etäisyysmittojen (D22, D23, D23 mod) vertailussa luokitteluvirheen suhteen käy
 
 - k: 5
 
-Tuloksista huomataan, että parhaimpaan tulokseen päästiin etäisyysmitalla D22, mikä oli olettavaakin etäisyysmittoja käsittelevän artikkelin perusteella.
-
 ![](https://github.com/Deepthetics/tiralabra/blob/main/dokumentaatio/kuvat/distance_measure.png)
 
 - D22: 4%
