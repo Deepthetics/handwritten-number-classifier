@@ -18,17 +18,17 @@ class TestDistanceMeasures(unittest.TestCase):
         self.image3 = np.concatenate((self.image3, [1]*27+[0]))
         self.image3 = pd.Series(self.image3)
 
-    def test_distance_d6_calculates_distance_correctyle(self):
+    def test_distance_d6_calculates_distance_correctly(self):
         self.assertAlmostEqual(distance_d6(self.image1, self.image1), 0)
         self.assertAlmostEqual(distance_d6(self.image2, self.image2), 0)
         self.assertAlmostEqual(distance_d6(self.image2, self.image3), 1/1*27*sqrt(2))
 
-    def test_distance_d6_mod_calculates_distance_correctyle(self):
+    def test_distance_d6_mod_calculates_distance_correctly(self):
         self.assertAlmostEqual(distance_d6_mod(self.image1, self.image1), 0)
         self.assertAlmostEqual(distance_d6_mod(self.image2, self.image2), 0)
         self.assertAlmostEqual(distance_d6_mod(self.image2, self.image3), 1/1*27*sqrt(2))
 
-    def test_distance_f2_calculates_distance_correctyle(self):
+    def test_distance_f2_calculates_distance_correctly(self):
         self.assertEqual(distance_f2(1, 1), 1)
         self.assertEqual(distance_f2(2, 2.1), 2.1)
         self.assertEqual(distance_f2(10, 5.2), 10)
